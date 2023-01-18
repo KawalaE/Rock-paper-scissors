@@ -26,9 +26,10 @@ function playRound(computerSelection, userSelection){
                 computerPoints +=1;
             } else if(userSelection == "rock"){ 
                 alert("It is a tie this round!");
-            } else
+            } else if(userSelection != "rock" || userSelection != "paper" || userSelection != "scissors"){
                 computerPoints +=1; 
                 alert("Invalid input! Computer wins this round!");
+            }
             break;
         
         case "paper":
@@ -40,9 +41,10 @@ function playRound(computerSelection, userSelection){
                 computerPoints +=1;
             } else if(userSelection == "paper"){ 
                 alert("It is a tie this round!");
-            } else
+            } else if(userSelection != "rock" || userSelection != "paper" || userSelection != "scissors"){
                 computerPoints +=1;
                 alert("Invalid input! Computer wins this round!");
+            }
             break;
 
         case "scissors":
@@ -54,9 +56,10 @@ function playRound(computerSelection, userSelection){
                 computerPoints +=1;
             } else if(userSelection == "scissors"){ 
                 alert("It is a tie this round!");
-            } else
+            } else if(userSelection != "rock" || userSelection != "paper" || userSelection != "scissors"){
                 computerPoints +=1;
                 alert("Invalid input! Computer wins this round!");
+            }
             break;
     }
         
