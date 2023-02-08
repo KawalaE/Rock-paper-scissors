@@ -8,57 +8,51 @@ function getComputerChoice(){
     return options[randomNumber];
 }
 
-function getUserChoice(){
-    let userInput = prompt("Please choose between rock, paper and scissors.");
-    userInput = userInput.toLowerCase();
-    return userInput;    
-} 
-
 function playRound(computerSelection, userSelection){
-    
+
     switch (computerSelection){
         case "rock":
             if (userSelection == "paper"){
-                alert("You win this round!");
+                console.log("You win this round!");
                 userPoints +=1;
             } else if(userSelection == "scissors"){
-                alert("Computer wins this round!");
+                console.log("Computer wins this round!");
                 computerPoints +=1;
             } else if(userSelection == "rock"){ 
-                alert("It is a tie this round!");
+                console.log("It is a tie this round!");
             } else if(userSelection != "rock" || userSelection != "paper" || userSelection != "scissors"){
                 computerPoints +=1; 
-                alert("Invalid input! Computer wins this round!");
+                console.log("Invalid input! Computer wins this round!");
             }
             break;
         
         case "paper":
             if (userSelection == "scissors"){
-                alert("You win this round!");
+                console.log("You win this round!");
                 userPoints +=1;
             } else if(userSelection == "rock"){
-                alert("Computer wins this round!");
+                console.log("Computer wins this round!");
                 computerPoints +=1;
             } else if(userSelection == "paper"){ 
-                alert("It is a tie this round!");
+                console.log("It is a tie this round!");
             } else if(userSelection != "rock" || userSelection != "paper" || userSelection != "scissors"){
                 computerPoints +=1;
-                alert("Invalid input! Computer wins this round!");
+                console.log("Invalid input! Computer wins this round!");
             }
             break;
 
         case "scissors":
             if (userSelection == "rock"){
-                alert("You win this round!");
+                console.log("You win this round!");
                 userPoints +=1;
             } else if(userSelection == "paper"){
-                alert("Computer wins this round!");
+                console.log("Computer wins this round!");
                 computerPoints +=1;
             } else if(userSelection == "scissors"){ 
-                alert("It is a tie this round!");
+                console.log("It is a tie this round!");
             } else if(userSelection != "rock" || userSelection != "paper" || userSelection != "scissors"){
                 computerPoints +=1;
-                alert("Invalid input! Computer wins this round!");
+                console.log("Invalid input! Computer wins this round!");
             }
             break;
     }
@@ -66,14 +60,21 @@ function playRound(computerSelection, userSelection){
 }
 
 function gamePlay(){
-    for (let i = 0; i <5; i++){
-        playRound(getComputerChoice(), getUserChoice());
-    }
-    alert(`Computer: ${computerPoints} User: ${userPoints}`);
 
-    if (computerPoints > userPoints){
-        alert("Computer has won!");
-    } else alert("You have won!");
+    const choices = document.querySelectorAll('button');
+    choices.forEach(choice => {
+    choice.addEventListener('click',() => {
+        playRound(getComputerChoice(), choice.id);
+        if (computerPoints == 5 || userPoints == 5){
+            console.log(`Computer: ${computerPoints} User: ${userPoints}`)
+            if (computerPoints > userPoints){
+                console.log("Computer wins!");
+            } else (console.log("You win!"))
+        }
+        
+        });
+    });
 
 }
+
 gamePlay();
