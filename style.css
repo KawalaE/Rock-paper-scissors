@@ -1,0 +1,37 @@
+body {
+    background-image: url("Pictures/chalkboard.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: cover;
+    font-family: cursive;
+}
+
+.game-title{
+    font-size: 50px;
+    color:yellow;
+    display: flex;
+    justify-content: center;
+    
+}
+button{
+    border: none;
+    background: transparent;
+    border-image-outset: 500px;
+}
+#container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+}
+
+.active{
+    transform: scale(1.1);
+
+}
+
+.game-info{
+    color: yellow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
