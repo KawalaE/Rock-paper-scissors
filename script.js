@@ -4,15 +4,16 @@ let userPoints = 0;
 
 const container = document.querySelector('.game-info');
 let score = document.createElement('h1');
-score.textContent = "";
+score.textContent = "Choose to play!";
 let roundInfo = document.createElement('p');
-roundInfo.textContent = "";
+roundInfo.textContent = "Good luck :)";
 container.appendChild(score);
 container.appendChild(roundInfo);
 
 
 function getComputerChoice(){
     let randomNumber = Math.floor(Math.random() * 3);
+    score.textContent = `Computer: ${options[randomNumber]}`;
     console.log(options[randomNumber]);
     return options[randomNumber];
 }
@@ -74,17 +75,17 @@ function gamePlay(){
         choice.classList.add('active');
         setTimeout(() => {choice.classList.remove('active')}, 200);
         playRound(getComputerChoice(), choice.id);
-        score.textContent = (`Computer: ${computerPoints} User: ${userPoints}`);
+        
         if (computerPoints == 5 || userPoints == 5){
             if (computerPoints > userPoints){
                 roundInfo.textContent = "COMPUTER WINS!";
             } else (roundInfo.textContent = "YOU WIN!");
+            score.textContent = `Computer: ${computerPoints} User: ${userPoints}`;
             computerPoints = 0;
             userPoints = 0;
         }
         });
     });
-
 }
 
 gamePlay();

@@ -1,36 +1,38 @@
 body {
-    background-image: url("Pictures/chalkboard.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed; 
-    background-size: cover;
-    font-family: cursive;
+    background-color: #fcf2f0;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .game-title{
     font-size: 50px;
-    color:yellow;
+    color:rgb(184, 72, 184);
     display: flex;
     justify-content: center;
-    
+    flex-wrap: wrap;
 }
+
 button{
     border: none;
     background: transparent;
-    border-image-outset: 500px;
+    margin-top: 35px;
 }
+
 #container{
     display: flex;
     justify-content: center;
     flex-wrap: wrap; 
+    gap: 50px;
 }
 
 .active{
     transform: scale(1.1);
-
+    border-radius: 30px;
+    border-color: rgb(184, 72, 184);
+    box-shadow: 0 0 1rem rgb(184, 72, 184);
 }
 
 .game-info{
-    color: yellow;
+    color: rgb(184, 72, 184);
     display: flex;
     flex-direction: column;
     align-items: center;
